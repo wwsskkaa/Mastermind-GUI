@@ -1,11 +1,13 @@
 
 # Mastermind Game  
 
-Copyright (c) | Fall 2014 | Shuang Wu | University of Rochester 
+Copyright (c) | Fall 2016 | Shuang Wu | University of Waterloo 
 
 Description:
 
-I used AI to let the computer play mastermind. User sets the colors and the pegs, and the computer makes guesses, the user gives feedback and computer uses its logic to get the right answer eventually. My logic is some how like the 5-step algorithm on wikipedia but a little bit different: So for example, for n colors and a positions, I generaye an n^a length arraylist containing all the possible combinations. For example, the right answer is RRR, and I just random generate an guess from my arraylist and show the user(ie.BBB), the user tells me how many black and white pegs(ie.0,0), and I use my guess and comapre them with all the other possible answers from the arraylist, if they don't have the same black and whites(such as ABA,it will be 1 black), they will all be removed from the arraylist. Then from that smaller range of possibilities, I generate another answer and repeat my steps until the last one left in the arraylist is the true answer itself. 
+This is the extension of my textdisplay mastermind game with AI in another repo. I am implementing the GUI version of this mastermind game, and there are two choices for the game
+1) AI, the user is the one who come up with a sequence of colors and computer is guaranteed to make the correct guess in 5 steps.
+2) The computer the the one who randomly generate the sequence of colors and user should try to make guesses in certain number of steps.
 
 Included Files:
 1) This README
@@ -16,6 +18,16 @@ Included Files:
 
 4) algorithm.java:  implements interface mastermind, and contains all the methods (main method) to run this game.
 
+5) Main.java: main method to start everything
+
+6) Model.java observable class which handles all the logic behind this game, gonna combine the code inside with algorithm.java
+
+7) SplashScreen.java: handles the 6 second splash screen before the game starts
+
+8) humanguessingGUI.java handles the 2nd mode of the game
+
+9) GuessingPanel.java handles the 1st mode of the game
+
 
 Compilation Instructions: 
 
@@ -23,8 +35,15 @@ Go to terminal
 
 cd Desktop
 
-javac algorithm.java
-java algorithm
+javac *.java
+java algorithm  
+
+to run the text display
+
+or 
+java Main 
+
+to run the GUI now.
 
 
 DO NOT COPY OR USE OUR CODE. THANK YOU.
